@@ -131,20 +131,5 @@ class ReadLLG:
             progress_apply(thickness_sand_layers)
         return layered
     
-data_dir = r'F:\PhD\Data\Work\LLG\Input'
-
-
-llg = ReadLLG(data_dir)
-bbox = box(146200, 430000, 146300, 430100) # test polygon for selection with polygon
-
-#%%
-tqdm._instances.clear()
-layers = llg.sand_layers()
-
-
-#%%
-core = np.array([194111100])
-df_core = llg.select_core_data(core)
-thick = thickness_sand_layers(df_core)
 
 
